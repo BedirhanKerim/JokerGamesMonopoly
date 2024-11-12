@@ -1,0 +1,20 @@
+
+        { "totalTiles": 15,
+          "tiles": [
+            { "id": 1, "reward": { "amount": 3, "type": "strawberry" } },
+            { "id": 2, "reward": { "amount": 0, "type": "empty" } },
+            { "id": 3, "reward": { "amount": 7, "type": "apple" } },
+            { "id": 4, "reward": { "amount": 5, "type": "pear" } },
+            { "id": 5, "reward": { "amount": 0, "type": "empty" } },
+            { "id": 6, "reward": { "amount": 1, "type": "strawberry" } },
+            { "id": 7, "reward": { "amount": 9, "type": "pear" } },
+            { "id": 8, "reward": { "amount": 2, "type": "apple" } },
+            { "id": 9, "reward": { "amount": 0, "type": "empty" } },
+            { "id": 10, "reward": { "amount": 4, "type": "strawberry" } },
+            { "id": 11, "reward": { "amount": 6, "type": "pear" } },
+            { "id": 12, "reward": { "amount": 8, "type": "apple" } },
+            { "id": 13, "reward": { "amount": 0, "type": "empty" } },
+            { "id": 14, "reward": { "amount": 7, "type": "pear" } },
+            { "id": 15, "reward": { "amount": 5, "type": "apple" } }
+          ]
+        }
