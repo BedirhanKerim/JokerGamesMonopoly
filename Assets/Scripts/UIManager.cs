@@ -58,7 +58,11 @@ public class UIManager : Singleton<UIManager>
     }
     public void RollButtonClicked()
     {
-        RollEvent?.Invoke(int.Parse(tmpInputField1.text),int.Parse(tmpInputField2.text));
+        if (GameManager.Instance.bCanRoll)
+        {
+            GameManager.Instance.bCanRoll = false;
+            RollEvent?.Invoke(int.Parse(tmpInputField1.text),int.Parse(tmpInputField2.text));
+        }
     }
     }
 

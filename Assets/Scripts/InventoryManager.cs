@@ -62,13 +62,7 @@ namespace InventorySystem
                 }
             }
         }
-
-        [NaughtyAttributes.Button()]
-        public void TestAddApple()
-        {
-            AddItem(ItemType.Apple, 5);
-        }
-
+        
         public Sprite GetTypesSprite(string itemType)
         {
             if (Enum.TryParse(itemType, true, out ItemType itemEnum))
@@ -77,18 +71,10 @@ namespace InventorySystem
                 {
                     if (inventoryValues[i].type == itemEnum)
                     {
-                      //  Debug.Log("Found matching item type!");
                         return inventoryValues[i].itemSprite;
                     }
                 }
             }
-            else
-            {
-              //  Debug.LogError("Invalid itemType string: " + itemType);
-            }
-
-
-           // Debug.LogError("No matching item found for type: " + itemType);
             return null;
         }
     }

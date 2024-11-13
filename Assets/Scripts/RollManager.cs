@@ -37,6 +37,12 @@ public class RollManager : Singleton<RollManager>
         SetDiceRotation(currentDice2, predeterminedNumber2, turnTimeDice2);
 
         Rotate90DegreesX();
+        Invoke(nameof(DelayForSteps), 1.25f);
+    }
+
+    private void DelayForSteps()
+    {
+        PlayerMovement.Instance.MoveOnTiles(predeterminedNumber1 + predeterminedNumber2);
     }
 
     private void SetDiceRotation(GameObject dice, int number, int turnCount)
@@ -44,6 +50,7 @@ public class RollManager : Singleton<RollManager>
         Vector3 rotation = ShowResult(number, turnCount);
         dice.transform.rotation = Quaternion.Euler(rotation);
     }
+
     public void Rotate90DegreesX()
     {
         StartCoroutine(RotateOverTimeDice1());
@@ -62,6 +69,7 @@ public class RollManager : Singleton<RollManager>
             currentDice1.transform.position += moveDirection * turnTimeDice1 / 2 * Time.deltaTime;
             yield return null;
         }
+
         Destroy(currentDice1, 2f);
     }
 
@@ -77,6 +85,7 @@ public class RollManager : Singleton<RollManager>
             currentDice2.transform.position += moveDirection * turnTimeDice2 / 2 * Time.deltaTime;
             yield return null;
         }
+
         Destroy(currentDice2, 2f);
     }
 

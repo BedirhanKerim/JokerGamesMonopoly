@@ -70,5 +70,19 @@ public class MapManager : Singleton<MapManager>
 
             currentPosition.x += 1;
         }
+
+        PlayerMovement.Instance.maxTileNumber = tilesList.Count;
+    }
+
+    public void DetectReward(int id)
+    {
+        var itemType = tilesList[id - 1].reward.type;
+        if (Enum.TryParse(itemType, true, out InventoryManager.ItemType itemEnum))
+        {
+            InventoryManager.Instance.AddItem(itemEnum,tilesList[id - 1].reward.amount);
+            PlayerMovement.Instance.lootParticle.Play();
+        }
+
+        GameManager.Instance.bCanRoll = true;
     }
 }
